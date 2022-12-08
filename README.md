@@ -32,7 +32,7 @@ The most difficult challenge to overcome in code is to be able to program the jo
 
 Motor Control: The diagram below shows how the motors will need to operate in order to move the drone is specific ways
 
-[image]
+![download](Images/download.png)
 
 Coding:
 
