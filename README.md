@@ -36,8 +36,9 @@ Motor Control: The diagram below shows how the motors will need to operate in or
 
 Coding:
 
-I found this code snippet from online that0
-0### Build
+I found this code snippet from online that
+
+### Build
 
 ### Risk Mitigation
 
