@@ -73,6 +73,17 @@ I found this code snippet from online that moves a drone with joysticks using ar
 | Frame reconstruction | Medium | Laser cut body & 3D print motor part |
 
 
+### Proposed Schedule & Milestones
+
+| Week  | Tasks | Milestone |
+| ------------- | ------------- | ------------ |
+| 12/12 - 12/15 | General - Work On Project Proposal | Finish Proposal |
+| 1/3 - 1/6 | Build Drone in CAD / PID Stablization Code | No Milestone / Have stabilizing motors |
+| 1/9 - 1/13 | Continue CAD Drone / Troubleshoot PID & Work on Joystick Control | Print 1st prototype drone / Finalize PID Stability |
+| 1/16 - 1/20 | Assemble and Test 1st prototype | Complete Prototype |
+| **Quarter Ends (1/20)** |TRY TO HAVE A PROTOYPE IN TESTING | Enjoy the weekend |
+| 1/23 - 1/27  | Reiterate design / Debug & Improve code  | No Milestone |
+| 1/30 - 2/3 | Assemble and Test 2nd Prototype / Test Joystick Code | 
 
 
 ### Optimizations
