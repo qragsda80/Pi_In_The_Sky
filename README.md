@@ -36,7 +36,23 @@ Motor Control: The diagram below shows how the motors will need to operate in or
 
 Coding:
 
-I found this code snippet from online that
+I found this code snippet from online that moves a drone with joysticks using arduino:
+
+``` c++
+
+ LR = analogRead(A0);     // read analog joystick voltage from pin A0, returns an integer from 0-1023
+ UD = analogRead(A1);     // read analog joystick voltage from pin A1, returns an integer from 0-1023
+ LR = 5*LR/1023;          // convert to a voltage from 0-5V
+ UD = 5*UD/1023;          // convert to a voltage from 0-5V
+
+
+// convert analog voltages to motor speeds
+ motor1speed = defaultSpeed+speedChange*(a*UD-a*LR);
+ motor2speed = defaultSpeed+speedChange*(a*UD+a*LR-b);
+ motor3speed = defaultSpeed+speedChange*(-a*UD+a*LR);
+ motor4speed = defaultSpeed+speedChange*(-a*UD-a*LR+b);
+  
+```
 
 ### Build
 
