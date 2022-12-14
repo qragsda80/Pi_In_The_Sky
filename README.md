@@ -58,6 +58,23 @@ I found this code snippet from online that moves a drone with joysticks using ar
 
 ### Risk Mitigation
 
+| Risk  | Possibility | Mitigation |
+| ------------- | ------------- | ------------ |
+| Drone Loses Control  | HIGH | Add a Killswitch |
+| Overheating | HIGH | Wear gloves in post flight recovery |
+| Frame cracks | HIGH | Build detachable propellor guards |
+| Drone activation unknown | Medium | Add ON light(green) |
+| Drone Explodes  | Low  | Have fire extinguisher on Standby |
+
+
+| Testing Risks | Possibility | Mitigation |
+| ------------- | ------------- | ------------ |
+| Doesn't respond w/ controller | HIGH | Build controlled testing piece (string) |
+| Frame reconstruction | Medium | Laser cut body & 3D print motor part |
+
+
+
+
 ### Optimizations
 
 
