@@ -118,6 +118,7 @@ Second Design Idea:
 | Week  | Tasks | Milestone |
 | ------------- | ------------- | ------------ |
 | 12/12 - 12/15 | General - Work On Project Proposal | Finish Proposal |
+| 12/18 - 1/2 | Winter Break | Chill |
 | 1/3 - 1/6 | Build Drone in CAD / PID Stablization Code | No Milestone / Have stabilizing motors |
 | 1/9 - 1/13 | Continue CAD Drone / Troubleshoot PID & Work on Joystick Control | Print 1st prototype drone / Finalize PID Stability |
 | 1/16 - 1/20 | Assemble and Test 1st prototype[^1] | Complete Prototype |
