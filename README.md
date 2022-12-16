@@ -2,6 +2,9 @@
 
 ## Planning
 
+<details>
+<summary>Check out our Project Planning!</summary>
+
 ### The Project
 
 Times are changing. Engineers such as Quinn & Shrey are super chill, but need to stay current in order to keep being chill. Drones are the next big thing in engineering, and building one successfully: that's super chill. As engineer's in the modern times, our job is to help the world, and be chill while doing it, because we want to set a good example for others who think Engineering is for not-chill people.
@@ -125,9 +128,10 @@ Second Design Idea:
 | 2/13 - 2/28 | Work towards building Final Prototype[^3] | Finish Final Prototype (2/28) |
 
 
----
+
 [^1]: First Prototype is to be a controlled flight (attached to string and not actually free flying)
 [^2]: Second Prototype is to be a slightly free flighted prototype (will not be flying above 5 feet)
 [^3]: Final Prototype is a fully functional drone prototype very similiar to the final product
 
+ </details>
 
