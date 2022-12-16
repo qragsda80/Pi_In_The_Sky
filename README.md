@@ -77,6 +77,16 @@ Here's some links on PID to learn:
 
 We are trying to constrain the size and mass of our design as much as possible to ensure maximum flight smoothness. We are referencing the [DJI Tello](https://m.dji.com/product/tello) for our rough dimensions. 
 
+We have prototyped 2 rough drone designs in OnShape
+
+First design Idea: 
+
+![firstdronedesign](Images/firstdronedesign.JPG)
+
+Second Design Idea:
+
+![secondronedesign](Images/seconddronedesign.jpg)
+
 #### Special Choices
 
 1) We are using Tello Drone specific motors for easy specification accesebility. 
