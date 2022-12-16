@@ -4,7 +4,9 @@
 
 ### The Project
 
-Fly a drone controlled by a remote and be able to collect data on an altimeter, and then be able to land the drone.
+Times are changing. Engineers such as Quinn & Shrey are super chill, but need to stay current in order to keep being chill. Drones are the next big thing in engineering, and building one successfully: that's super chill. As engineer's in the modern times, our job is to help[ the world, and be chill while doing it, because we want to set a good example for others who think Engineering is for not-chill people.
+
+What to we do? Fly a drone controlled by a remote and be able to collect data on an altimeter, and then be able to land the drone. The very concept of the drone screams modern while including glimpses of chillness. Collecting data while in the air adds another aspect of chillness to the build. Although the drone in it's current proposal only collects flight data, it lays the foundation for additional sensors and functionalities never dreamed of before in a High School Engineering class. This drone, through it's simplicity, lays a foundation of chillness in Engineering for generations to come.
 
 ### Success Criteria
 
@@ -35,11 +37,13 @@ Most of the materials we would need for our project we have in our lab. Any addi
 
 The most difficult challenge to overcome in code is to be able to program the joysticks on a controller to accurately control the drone
 
-Motor Control: The diagram below shows how the motors will need to operate in order to move the drone is specific ways
+#### Motor Control
+
+The diagram below shows how the motors will need to operate in order to move the drone is specific ways
 
 ![download](Images/download.png)
 
-Coding:
+#### Code Technicalities
 
 I found this code snippet from online that moves a drone with joysticks using arduino:
 
@@ -77,7 +81,8 @@ We are trying to constrain the size and mass of our design as much as possible t
 
 1) We are using Tello Drone specific motors for easy specification accesebility. 
 2) During testing, we will make the frame out of acrylic to be conscious of material used in 3D printing (we will need to make many iterations and don't want to waste material)
-3) In our final design, we will utilize ABS material for our frame, but use Ninjaflex for 
+3) In our final design, we will utilize ABS material for our frame, but use Ninjaflex for our propellor guards and landing buffer. This allows us the have slightly more flexibility and durability. If the drone crashes, the ninjaflex could prevent it from cracking completely.
+4) Our propellor gaurds will be made detachable to the main frame (snap fit). If the drone crashes, the chances are more likely it will land on the propellor guards than any other part of the drone, so making the guards detachable allow us to only need to reprint a piece rather than the entire frame.
 
 ### Risk Mitigation
 
