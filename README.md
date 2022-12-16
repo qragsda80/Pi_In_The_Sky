@@ -127,6 +127,7 @@ Second Design Idea:
 | 1/30 - 2/3 | Assemble and Test 2nd Prototype[^2] / Test Joystick Code | No Milestone |
 | 2/6 - 2/10 | Continue iterating Design & Code | Complete 2nd Prototype if not already done |
 | 2/13 - 2/28 | Work towards building Final Prototype[^3] | Finish Final Prototype (2/28) |
+| 
 
 
 
