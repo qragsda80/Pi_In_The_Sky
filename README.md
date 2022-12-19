@@ -1,15 +1,15 @@
 # Pi_In_The_Sky
 
-## Planning
-
-<details>
-<summary>Check out our Project Planning!</summary>
-
-### The Project
+## The Project
 
 Times are changing. Engineers such as Quinn & Shrey are super chill, but need to stay current in order to keep being chill. Drones are the next big thing in engineering, and building one successfully: that's super chill. As engineer's in the modern times, our job is to help the world, and be chill while doing it, because we want to set a good example for others who think Engineering is for not-chill people.
 
 What to we do? **Fly a drone controlled by a remote and be able to collect data on an altimeter, and then be able to land the drone.** The very concept of the drone screams modern while including glimpses of chillness. Collecting data while in the air adds another aspect of chillness to the build. Although the drone in it's current proposal only collects flight data, it lays the foundation for additional sensors and functionalities never dreamed of before in a High School Engineering class. This drone, through it's simplicity, lays a foundation of chillness in Engineering for generations to come.
+
+## Planning
+
+<details>
+<summary>Check out our Project Planning!</summary>
 
 ### Success Criteria
 
