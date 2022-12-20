@@ -1,15 +1,17 @@
 # Pi_In_The_Sky
 
+## The Project
+
+Times are changing. Engineers such as Quinn & Shrey are super chill, but need to stay current in order to keep being chill. Drones are the next big thing in engineering, and building one successfully: that's super chill. As engineer's in the modern times, our job is to help the world, and be chill while doing it, because we want to set a good example for others who think Engineering is for not-chill people.
+
+What to we do? **Fly a drone controlled by a remote and be able to collect data on an altimeter, and then be able to land the drone.** The very concept of the drone screams modern while including glimpses of chillness. Collecting data while in the air adds another aspect of chillness to the build. Although the drone in it's current proposal only collects flight data, it lays the foundation for additional sensors and functionalities never dreamed of before in a High School Engineering class. This drone, through it's simplicity, lays a foundation of chillness in Engineering for generations to come.
+
 ## Planning
 
 <details>
 <summary>Check out our Project Planning!</summary>
 
-### The Project
 
-Times are changing. Engineers such as Quinn & Shrey are super chill, but need to stay current in order to keep being chill. Drones are the next big thing in engineering, and building one successfully: that's super chill. As engineer's in the modern times, our job is to help the world, and be chill while doing it, because we want to set a good example for others who think Engineering is for not-chill people.
-
-What to we do? **Fly a drone controlled by a remote and be able to collect data on an altimeter, and then be able to land the drone.** The very concept of the drone screams modern while including glimpses of chillness. Collecting data while in the air adds another aspect of chillness to the build. Although the drone in it's current proposal only collects flight data, it lays the foundation for additional sensors and functionalities never dreamed of before in a High School Engineering class. This drone, through it's simplicity, lays a foundation of chillness in Engineering for generations to come.
 
 ### Success Criteria
 
@@ -122,12 +124,22 @@ Second Design Idea:
 | 1/3 - 1/6 | Build Drone in CAD / PID Stablization Code | No Milestone / Have stabilizing motors |
 | 1/9 - 1/13 | Continue CAD Drone / Troubleshoot PID & Work on Joystick Control | Print 1st prototype drone / Finalize PID Stability |
 | 1/16 - 1/20 | Assemble and Test 1st prototype[^1] | Complete Prototype |
-| **Quarter Ends (1/20)** |TRY TO HAVE A PROTOYPE IN TESTING | Enjoy the weekend |
+| **1/20** | **Quarter Ends** | **Try to have a Prototype in Testing** |
 | 1/23 - 1/27  | Reiterate design / Debug & Improve code  | No Milestone |
 | 1/30 - 2/3 | Assemble and Test 2nd Prototype[^2] / Test Joystick Code | No Milestone |
 | 2/6 - 2/10 | Continue iterating Design & Code | Complete 2nd Prototype if not already done |
 | 2/13 - 2/28 | Work towards building Final Prototype[^3] | Finish Final Prototype (2/28) |
-| 
+| 3/6 - 3/31 | Design Refinement & Final Tweaks | Ready to launch |
+| **3/30** | **Quarter Ends**| **Ready to Launch** |
+| 4/3 - 4/7 | First Project Launch | Launch Drone and Collect Data |
+| 4/10 - 4/14 | Modify Build/Code & Prepare to relaunch next week | Analyze 1st launch data & have drone ready for relaunch |
+| 4/17 - 4/21 | Second Project Launch | Launch Drone & Collect/Analyze Data |
+| 4/24 - 4/28 | Buffer Week | Catch up on schedule |
+| 5/1 - 5/5 | Final Project Documentation | Add Analyzed Data & Finish Final Project Documentation |
+| 5/8 - 5/19 | Buffer Weeks | Catch up on Schedule |
+| **5/19** | **Project Due** | **Submit GitHub Repo on Canvas** |
+| 5/22 - 6/9 | EMERGENCY PROJECT WORK (if required) | FINISH PROJECT / Chill & Enjoy Flying Drone |
+| **6/9** | **LAST DAY OF SCHOOL** | **PLACE DRONE ON WALL OF FAME** |
 
 
 
