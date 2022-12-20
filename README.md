@@ -84,7 +84,6 @@ We have prototyped 2 rough drone designs in OnShape
 First design Idea: 
 
 ![firstdronedesign](Images/firstdronedesign.JPG)
-<img src="https://github.com/qragsda80/Pi_In_The_Sky/blob/main/Images/firstdronedesign.png?raw=true" alt="First Drone Design" width="500">
 
 Second Design Idea:
 
