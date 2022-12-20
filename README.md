@@ -11,8 +11,11 @@ What to we do? **Fly a drone controlled by a remote and be able to collect data 
 <details>
 <summary>Check out our Project Planning!</summary>
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> origin/main
 ### Success Criteria
 
 Criteria to determine if our project is a success:
