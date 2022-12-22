@@ -37,7 +37,7 @@ Most of the materials we would need for our project we have in our lab. Any addi
 
 ### Code
 
-The most difficult challenge to overcome in code is to be able to program the joysticks on a controller to accurately control the drone
+The most difficult challenge to overcome in code is to be able to program the joysticks on a controller to accurately control the drone, and get a stable PID working.
 
 #### Motor Control
 
