@@ -11,11 +11,11 @@ i2c = busio.I2C(scl_pin, sda_pin)
 
 mpu = adafruit_mpu6050.MPU6050(i2c)
 
-motor1pin = ()
-motor2pin = ()
-motor3pin = ()
-motor4pin = ()
-const int defaultSpeed = 
+int motor1pin = ()
+int motor2pin = ()
+int motor3pin = ()
+int motor4pin = ()
+int defaultSpeed = 
 int motor1speed = defaultSpeed
 int motor2speet = defaultSpeed
 int motor3speed = defaultSpeed
