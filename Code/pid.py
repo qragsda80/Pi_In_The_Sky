@@ -36,27 +36,24 @@ daacz = ()
 
 error = 0
 
-
+startTime = time.monotonic
+loopTime = 0
 
 while True:
-    x = mpu.acceleration[0]
-    y = mpu.acceleration[1]
-    z = mpu.acceleration[2]
+    elapsedTime = startTime - loopTime
 
-# calculates error variable
-    error = 0
+    # Get acceleration in g's
+    x = mpu.acceleration[0] / 9.8
+    y = mpu.acceleration[1] / 9.8
+    z = mpu.acceleration[2] / 9.8
 
-# Converts acceleration values into voltage 0-5
-    vx = x/(acc. output range) * 5
-    vy = y/() * 5
-    vz = z/() * 5
-
-
+    roll = 57.2958*atan2(y,z);
+    pitch = 57.2958*atan2(-x,sqrt(y*y+z*z));
 
 # PID controller to find speedChange
 
     joystick1 = () #read analog joystick value
-    targetPitch = map(joystick1, 0, 1023, , )
+    targetPitch = map(joystick1, 0, 1023, -45, 45 )
     elapsedTime =     #insert function to get time since last loop
     error = (targetPitch - currentPitch)
     ingerror = ingerror + error * elapsedTime
@@ -69,6 +66,9 @@ while True:
     motor2speet = motor1speed
     motor3speed = defaultSpeed + speedChange
     motor4speed = motor3speed
+    
+    loopTime = time.monotonic
+
 
     
 
