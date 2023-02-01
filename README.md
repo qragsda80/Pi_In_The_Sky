@@ -289,6 +289,14 @@ while True:
  #### CAD
 
 12/15 - 1/5: The is the first design for our drone. The first design was supossed to be a box to hold all of the components. We shelled the inside of this design. In the end, we started over from scratch because for our first prototype and this early in the build, we didn't know all of the components needed, so a box wasn't working.
-<img src="https://github.com/qragsda80/Pi_In_The_Sky/blob/main/Images/firstdronedesign.jpg" width="400"   height="500" />
+![First Design](Images/firstdronedesign.jpg)
 
-2/1/23: We have completed the CAD design in Onshape and have begun to get the parts printed. The design is comprised of 3 different parts: the main structure, motor mounts, and rotor guards. There will be only 1 copy of the main structure. and this will hold all of the elctronics in the middle and be the arms that extends out to the rotors. There will be 4 copies of the motor mounts printed. These mount the motors onto the main structure and attach the rotor guards as well. There will also be 4 of the rotor guards printed, and these will extend out to protect the rotos, so that if the drone bumps into an object it contacts the rotor guards rather than causing damage by hitting the rotors themselves. At this time we have the motor mounts and main structure printed and attach, and we are waiting on the rotor guards. We are also waiting on the motors to be delivered so that we can assemble and start testing the prototype.
+2/1/23: We have completed the CAD design in Onshape and have begun to get the parts printed. The design is comprised of 3 different parts: the main structure, motor mounts, and rotor guards. There will be only 1 copy of the main structure. and this will hold all of the elctronics in the middle and be the arms that extends out to the rotors. There will be 4 copies of the motor mounts printed. These mount the motors onto the main structure and attach the rotor guards as well. There will also be 4 of the rotor guards printed, and these will extend out to protect the rotos, so that if the drone bumps into an object it contacts the rotor guards rather than causing damage by hitting the rotors themselves. At this time we have the motor mounts and main structure printed and attach, and we are waiting on the rotor guards. We are also waiting on the motors to be delivered so that we can assemble and start testing the prototype. The different parts and current physical assembly are pictured below:
+
+Main Structure:
+
+Motor Mount:
+
+Rotor Guard:
+
+Current Physical Assembly:
