@@ -155,6 +155,13 @@ Second Design Idea:
  
 Obviously a week does not consist of 28 days. But this is a one-off thing. We forgot to document this month, but we will start now. These few weeks haven't been the MOST productive (not because we haven't been trying, we just haven't had materials). We've made progress on the Code and CAD though.
  
+ 
+### CAD
+
+The is the first design for our drone. The first design was supossed to be a box to hold all of the components. We shelled the inside of this design. In the end, we started over from scratch because for our first prototype and this early in the build, we didn't know all of the components needed, so a box wasn't working.
+![First Design](Images/firstdronedesign.jpg)
+
+
 #### Code
  
 So far we have a working (with one joystick) code, that (in theory) steers the drone. We have tested in only on the serial monitor by printing out the speed values of the motor according to the joystick position. We also have a slighlty incomplete and untested PID code for the drone. It can't be finished till we get the motors so we know what values to use, and then we would need to test to see if it even REMOTELY works...who knows...Here's some of that code below, but we'll add new versions across weeks so you can see our progress!
