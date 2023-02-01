@@ -298,10 +298,10 @@ Main Structure:
 <img src="https://github.com/qragsda80/Pi_In_The_Sky/blob/c789c24da8290a1bf6e03603c081f7bb68520c35/Images/baseplate.PNG" alt="Main Structure Onshape" width="400">
 
 Motor Mount:  
-<img src="pic_trulli.jpg" alt="Motor Mount Onshape">
+<img src="https://github.com/qragsda80/Pi_In_The_Sky/blob/970f676337e5a167571f850cf4850d196779d3bb/Images/motormount.PNG" alt="Motor Mount Onshape" width="400">
 
 Rotor Guard:  
-<img src="pic_trulli.jpg" alt="Rotor Guard Onshape">
+<img src="https://github.com/qragsda80/Pi_In_The_Sky/blob/970f676337e5a167571f850cf4850d196779d3bb/Images/rotorguard.PNG" alt="Rotor Guard Onshape" width="400">
 
 Current Physical Assembly:  
-<img src="pic_trulli.jpg" alt="Physical Assembly Picture">
+<img src="https://github.com/qragsda80/Pi_In_The_Sky/blob/970f676337e5a167571f850cf4850d196779d3bb/Images/physical%20assembly.jpg" alt="Physical Assembly Picture" width="400">
