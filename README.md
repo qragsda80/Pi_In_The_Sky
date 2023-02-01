@@ -146,5 +146,64 @@ Second Design Idea:
 [^3]: Final Prototype is a fully functional drone prototype very similiar to the final product
 
  </details>
+ 
+## Weekly Milestones
+ 
+### 1/3 - 1/31
+ 
+#### General
+ 
+Obviously a week does not consist of 28 days. But this is a one-off thing. We forgot to document this month, but we will start now. These few weeks haven't been the MOST productive (not because we haven't been trying, we just haven't had materials). We've made progress on the Code and CAD though.
+ 
+#### Code
+ 
+So far we have a working (with one joystick) code, that (in theory) steers the drone. We have tested in only on the serial monitor by printing out the speed values of the motor according to the joystick position. Here's some of that code:
+
+```python
+
+import time
+import board
+from analogio import AnalogIn
+import simpleio
+
+joy_x = AnalogIn(board.GP27)
+joy_y = AnalogIn(board.GP26)
+
+#motor1pin = ()
+#motor2pin = ()
+#motor3pin = ()
+#motor4pin = ()
+hoverSpeed = 130;   # default PWM value
+speedChange = 90;     # PWM value to add or subtract
+ramp_delay = 40;      # loop delay time for motor ramp up in milliseconds
+a = 0.3;            # constant for converting analog voltages to PWM values
+b = 1.5;            # offset for converting voltages to PWM values
+
+while True: 
+    
+    LR = simpleio.map_range(joy_x.value, 0, 65520, 0, 5)
+    UD = simpleio.map_range(joy_y.value, 200, 65520, 0, 5)
+    
+    # make analog (or whatever) values into voltage values or map the values to how the ramge motors operate
+
+    motor1speed = hoverSpeed + speedChange*(a*UD-a*LR)
+    motor2speed = hoverSpeed + speedChange*(a*UD+a*LR-b)
+    motor3speed = hoverSpeed + speedChange*(-a*UD+a*LR)
+    motor4speed = hoverSpeed + speedChange*(-a*UD-a*LR+b)
+
+    # make code to send speeds to motors
+
+    print(f"Motor 1 = {motor1speed}")
+    time.sleep(0.2)
+    print(f"Motor 2 = {motor2speed}")
+    time.sleep(0.2)
+    print(f"Motor 3 = {motor3speed}")
+    time.sleep(0.2)
+    print(f"Motor 4 = {motor4speed}")
+    time.sleep(0.2)
+```
+
+ 
+ #### CAD
 
  
