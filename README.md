@@ -157,7 +157,10 @@ Obviously a week does not consist of 28 days. But this is a one-off thing. We fo
  
 #### Code
  
-So far we have a working (with one joystick) code, that (in theory) steers the drone. We have tested in only on the serial monitor by printing out the speed values of the motor according to the joystick position. Here's some of that code:
+So far we have a working (with one joystick) code, that (in theory) steers the drone. We have tested in only on the serial monitor by printing out the speed values of the motor according to the joystick position. Here's some of that code below, but we'll add new versions across weeks so you can see our progress!
+
+<details>
+<summary>Code Week 7</summary>
 
 ```python
 
@@ -202,6 +205,7 @@ while True:
     print(f"Motor 4 = {motor4speed}")
     time.sleep(0.2)
 ```
+</details>
 
  
  #### CAD
