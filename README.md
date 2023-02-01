@@ -162,6 +162,8 @@ So far we have a working (with one joystick) code, that (in theory) steers the d
 <details>
 <summary>Code Week 7</summary>
 
+Joystick Control:
+
 ```python
 
 import time
@@ -205,6 +207,8 @@ while True:
     print(f"Motor 4 = {motor4speed}")
     time.sleep(0.2)
 ```
+
+PID: 
  
 ```python
 
