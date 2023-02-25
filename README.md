@@ -315,3 +315,25 @@ We made a lot of progress in these 2 weeks. The focus was more about getting the
 #### Wiring
 
 The code section for this week has been replaced by wiring. Our main goal was figuring out how to get our motors and pico wired up on a breadboard so that all the motors worked. Let me tell you, it was a PAIN. Look at the wiring diagram below. It shows all the wires needed for ONE motor. Then imagine how many we would need for 4 motors.
+
+<img src="https://github.com/qragsda80/Pi_In_The_Sky/blob/main/Images/DroneWiringv1.png" alt="droneWiringv1" height="200">
+
+Anyway, we got it all hooked up, and now we're trying to find ways to optimize our wiring so we can fit it all on one PCB. I also wrote up a quick ~5 line code to just send power to the motors so we can test and see which ones work and don't. 
+
+#### Build
+
+### 2/13 - 2/24
+
+#### General
+
+There were A LOT of changes since the last update. Things are looking a lot better and more promising.
+
+#### Wiring
+
+Yep. Still no code. We are continuing to work on the physical building on the drone till we get it to our "first prototype stage". We are slightttttly behind schedule (we were supposed to be working on final/3rd prototype now), but we're nto to behind. Our schedule was very rugourous and overshot anyways. The big changes have come on the wiring front - we figured out a way to wire up all our motors without any diode or resistors. We switched to using MOSFETS as our transistors, and it DRASTICALLY reduces how many wires we need. Here's a picture of our PCB that we "completed" today. 
+
+[add PCB picture here]
+
+Now, our wiring isn't perfect, because the motors don't work with this setup, which is wierd. We soldered on the first motor (with the MOSFET that is directly soldered onto the board....) and it worked perfect. Then, all we did was Ctrl+C & Ctrl+V for the next 3 motors, and in theory, they shoudlv'e all worked. Somehow, only 2 motors run AND they just get direclty powered from the battery without getting regulated by the pico. What's even MORE confusing is that the first motor we soldered on stopped working. Something is wrong, and we'll work on that next week. Worst comes worst, we'll have to take off the 3 added motors and test it as we solder along (which we probably should've done in the first place).
+
+#### Build
