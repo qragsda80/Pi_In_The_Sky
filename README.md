@@ -305,3 +305,13 @@ Rotor Guard:
 
 Current Physical Assembly:  
 <img src="https://github.com/qragsda80/Pi_In_The_Sky/blob/970f676337e5a167571f850cf4850d196779d3bb/Images/physical%20assembly.jpg" alt="Physical Assembly Picture" height="200">
+
+### 2/1 - 2/10
+
+#### General
+
+We made a lot of progress in these 2 weeks. The focus was more about getting the physical drone functional, because without it we couldn't really test any of the code. 
+
+#### Wiring
+
+The code section for this week has been replaced by wiring. Our main goal was figuring out how to get our motors and pico wired up on a breadboard so that all the motors worked. Let me tell you, it was a PAIN. Look at the wiring diagram below. It shows all the wires needed for ONE motor. Then imagine how many we would need for 4 motors.
