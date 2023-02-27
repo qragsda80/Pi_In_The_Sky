@@ -332,8 +332,8 @@ There were A LOT of changes since the last update. Things are looking a lot bett
 
 Yep. Still no code. We are continuing to work on the physical building on the drone till we get it to our "first prototype stage". We are slightttttly behind schedule (we were supposed to be working on final/3rd prototype now), but we're not to behind. Our schedule was very rigorous and overshot anyways. The big changes have come on the wiring front - we figured out a way to wire up all our motors without any diode or resistors. We switched to using MOSFETS as our transistors, and it DRASTICALLY reduces how many wires we need. Here's a picture of our PCB that we "completed" today. 
 
-<img src="https://github.com/qragsda80/Pi_In_The_Sky/blob/main/Images/DroneWiringv1.png" alt="droneWiringv1" height="200">
-<img src="https://github.com/qragsda80/Pi_In_The_Sky/blob/main/Images/DroneWiringv1.png" alt="droneWiringv1" height="200">
+![Back of PCB](Images/backofPCB.JPG)
+![Front of PCB](Images/frontofPCB.JPG)
 
 Now, our wiring isn't perfect, because the motors don't work with this setup, which is weird. We soldered on the first motor (with the MOSFET that is directly soldered onto the board....) and it worked perfect. Then, all we did was Ctrl+C & Ctrl+V for the next 3 motors, and in theory, they should've all worked. Somehow, only 2 motors run AND they just get directly powered from the battery without getting regulated by the pico. What's even MORE confusing is that the first motor we soldered on stopped working. Something is wrong, and we'll work on that next week. Worst comes worst, we'll have to take off the 3 added motors and test it as we solder along (which we probably should've done in the first place).
 
