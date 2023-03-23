@@ -1,75 +1,76 @@
 # Code to stablize drone
 
 import time
+import math
 import board
 import adafruit_mpu6050
 import busio
+import pwmio
 
-sda_pin = board.GP14
-scl_pin = board.GP15
+sda_pin = board.GP12
+scl_pin = board.GP13
 i2c = busio.I2C(scl_pin, sda_pin)
 
 mpu = adafruit_mpu6050.MPU6050(i2c)
 
-int motor1pin = ()
-int motor2pin = ()
-int motor3pin = ()
-int motor4pin = ()
-int defaultSpeed = 
-int motor1speed = defaultSpeed
-int motor2speet = defaultSpeed
-int motor3speed = defaultSpeed
-int motor4speed = defaultSpeed
+pwm_motor = pwmio.PWMOut(board.GP26, duty_cycle=2 ** 15, frequency=50)
+pwm_motor2 = pwmio.PWMOut(board.GP21, duty_cycle=2 ** 15, frequency=50)
+pwm_motor3 = pwmio.PWMOut(board.GP18, duty_cycle=2 ** 15, frequency=50)
+pwm_motor4 = pwmio.PWMOut(board.GP28, duty_cycle=2 ** 15, frequency=50)
+
+
+
+defaultSpeed = 40000
+pwm_motor.duty_cycle = defaultSpeed
+pwm_motor2.duty_cycle = defaultSpeed
+pwm_motor3.duty_cycle = defaultSpeed
+pwm_motor4.duty_cycle = defaultSpeed
 speedChange = 0
-const float Kp = () # proportional gain
-const float Ki = () # integral gain
-const float Kd = () # derivative gain
-float ingerror
-float lastError
+Kp = 5 # proportional gain
+Ki = 0.1 # integral gain
+Kd = 5 # derivative gain
+ingerror = 0
+lastError = 0
 
-gain = () #how much the sensor changes (dy) with respect to dx (1 notch up) 
+gain = 330 #how much the sensor changes (dy) with respect to dx (1 notch up) 
 
 
-daccx = (the flat x value)
-daacy = ()
-daacz = ()
+#daccx = (the flat x value)
+#daacy = ()
+#daacz = ()
 
 error = 0
-
-startTime = time.monotonic
+elapsedTime = 1
 loopTime = 0
 
 while True:
-    elapsedTime = startTime - loopTime
+    startTime = time.monotonic()
+
+    
 
     # Get acceleration in g's
     x = mpu.acceleration[0] / 9.8
     y = mpu.acceleration[1] / 9.8
     z = mpu.acceleration[2] / 9.8
 
-    roll = 57.2958*atan2(y,z);
-    pitch = 57.2958*atan2(-x,sqrt(y*y+z*z));
+    roll = 57.2958*math.atan2(y,z)
+    currentPitch = 57.2958*math.atan2(-x,math.sqrt(y*y+z*z))
 
-# PID controller to find speedChange
+# PID controller to find speedChange   
 
-    joystick1 = () #read analog joystick value
-    targetPitch = map(joystick1, 0, 1023, -45, 45 )
-    elapsedTime =     #insert function to get time since last loop
+    targetPitch = -4.35
     error = (targetPitch - currentPitch)
     ingerror = ingerror + error * elapsedTime
     dxerror = (error - lastError)/elapsedTime
     speedChange = Kp*error + Ki*ingerror + Kd*dxerror
-    error = lastError
-
+    lastError = error
 # Changes motor speeds using calculates speedChange variable
-    motor1speed = defaultSpeed + speedChange
-    motor2speet = motor1speed
-    motor3speed = defaultSpeed + speedChange
-    motor4speed = motor3speed
+    pwm_motor.duty_cycle = int(round(defaultSpeed + speedChange))
+    pwm_motor2.duty_cycle = int(round(defaultSpeed + speedChange))
+    pwm_motor3.duty_cycle = int(round(defaultSpeed - speedChange))
+    pwm_motor4.duty_cycle = int(round(defaultSpeed - speedChange))
     
-    loopTime = time.monotonic
-
-
-    
-
-
+    loopTime = time.monotonic()
+    elapsedTime = startTime - loopTime
+    print(f"Speedchange: {speedChange} & MotorSpeed: {pwm_motor.duty_cycle}")
+    time.sleep(.5)
