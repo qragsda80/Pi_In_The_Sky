@@ -316,7 +316,7 @@ We made a lot of progress in these 2 weeks. The focus was more about getting the
 
 The code section for this week has been replaced by wiring. Our main goal was figuring out how to get our motors and pico wired up on a breadboard so that all the motors worked. Let me tell you, it was a PAIN. Look at the wiring diagram below. It shows all the wires needed for ONE motor. Then imagine how many we would need for 4 motors.
 
-<img src="https://github.com/qragsda80/Pi_In_The_Sky/blob/main/Images/DroneWiringv1.png" alt="droneWiringv1" height="200">
+
 
 Anyway, we got it all hooked up, and now we're trying to find ways to optimize our wiring so we can fit it all on one PCB. I also wrote up a quick ~5 line code to just send power to the motors so we can test and see which ones work and don't. 
 
@@ -338,3 +338,20 @@ Yep. Still no code. We are continuing to work on the physical building on the dr
 Now, our wiring isn't perfect, because the motors don't work with this setup, which is weird. We soldered on the first motor (with the MOSFET that is directly soldered onto the board....) and it worked perfect. Then, all we did was Ctrl+C & Ctrl+V for the next 3 motors, and in theory, they should've all worked. Somehow, only 2 motors run AND they just get directly powered from the battery without getting regulated by the pico. What's even MORE confusing is that the first motor we soldered on stopped working. Something is wrong, and we'll work on that next week. Worst comes worst, we'll have to take off the 3 added motors and test it as we solder along (which we probably should've done in the first place).
 
 #### Build
+
+
+### 2/27 - 3/10
+
+#### General
+
+We've started to shift into our "iternation" stage of our project. We have a "completed" drone, but not really. Our PCB is wired up to our motors, and the drone does fly, but obviously nothing else works. If we let it free fly right now, it will go up, take a sharp turn, and slam into someones face and cause a few cuts. So the correct decision was to do some "controlled" testing.
+
+#### Code
+
+The code section is back! We haven't needed to actually use code for the past few weeks, but we're back on it. We need to get our PID code working so we can start to do some "free(er)" flights. This is the hard part unfortunately. We messed around a but with it, but ran into more problems. The code was not correcting at all, and so we had to do some debugging. To start, we printed out some of the variables in our code such as "speedChange" or "target/currentPitch". Through this process, it was found that there were a few variables that were declared incorreclty causing the whole code to output "0". It was also because I set "error = lasterror", instead of "lasterror = error". All that for a week... We had other problems through our testing too, which were not even related to code:(
+
+#### Build
+
+One of the main build aspects of our project over these 2 weeks wasn't realted to the actual drone, but the PID tester stand. I built a small stand so that we could test our PID in a controlled way on one axis. Unfortuntely, it was a slightly scrappy creation, and when that results in: scrapiness(stand+drone+wiring) + tape = hell. We had so much tape on this version of the stand (as you can see by the picture below), and it was a mess. 
+
+<img src="https://github.com/qragsda80/Pi_In_The_Sky/blob/main/Images/PIDtesterv1.jpg" alt="PIDtesterv1" height="200" width="200">
