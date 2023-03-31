@@ -355,3 +355,19 @@ The code section is back! We haven't needed to actually use code for the past fe
 One of the main build aspects of our project over these 2 weeks wasn't realted to the actual drone, but the PID tester stand. I built a small stand so that we could test our PID in a controlled way on one axis. Unfortuntely, it was a slightly scrappy creation, and when that results in: scrapiness(stand+drone+wiring) + tape = hell. We had so much tape on this version of the stand (as you can see by the picture below), and it was a mess. 
 
 <img src="https://github.com/qragsda80/Pi_In_The_Sky/blob/main/Images/PIDtesterv1.jpg" alt="PIDtesterv1" height="200" width="200">
+
+### 3/13 - 3/31
+
+#### General
+
+We're grouping these 3 weeks together because we were working on the same main tasks across all weeks. The goals for the weeks remaining till our milestone at the end of the quarter were: Reprint drone base, work on PID code (try to get it working to some extent), fix wiring issues, stop buring picos. Yep, we went through quite a few picos, BUT, it's all part of the engineering desing process. Somethings are going to break, but we need to learn from our mistakes...after 3 times of not learning. The important thing is that we haven't burned ANY more after the first 3!!! That deserves a "Most Improved" award if you ask me.
+
+#### Code
+
+
+
+#### Build
+
+
+
+
