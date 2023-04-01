@@ -356,17 +356,41 @@ One of the main build aspects of our project over these 2 weeks wasn't realted t
 
 <img src="https://github.com/qragsda80/Pi_In_The_Sky/blob/main/Images/PIDtesterv1.jpg" alt="PIDtesterv1" height="200" width="200">
 
-### 3/13 - 3/31
+
+### 3/13-3/24
 
 #### General
 
-We're grouping these 3 weeks together because we were working on the same main tasks across all weeks. The goals for the weeks remaining till our milestone at the end of the quarter were: Reprint drone base, work on PID code (try to get it working to some extent), fix wiring issues, stop buring picos. Yep, we went through quite a few picos, BUT, it's all part of the engineering desing process. Somethings are going to break, but we need to learn from our mistakes...after 3 times of not learning. The important thing is that we haven't burned ANY more after the first 3!!! That deserves a "Most Improved" award if you ask me.
+These 2 weeks we worked on tuning the PID code more and designing a new drone base and other parts. We attached the drone to our metal pivot base and were using it to get different values to use in the PID. We had a few small soddering deconnection issues that required we take the drone off of the base to fix them, but they are now connected securly. For the second week we discussed and designed a new baseplate for the drone that would allow it to hold and easily swap out batteries, and securely attach the board away from any interference with the propellers. We initially had a hole in the middle of the baseplate, underneath the board, that would allow the wires to travel through and then underneath to the motor. However, we realized that this wasn’t feasible as it would interfere with a battery mount, and it would make it much more difficult to attach and detach the board to get to the wiring underneath, as the motor wires would have to all be detached and run through the hole. We decided that we’d keep the wires from interfering with the propellers by wrapping them around the arms on the way to the propeller, which was a much more effective solution. We designed a simple press-fit battery mount on the bottom of the drone, that would allow batteries to easily be swapped.
 
-#### Code
+<details>
+<summary>Current PID Code</summary>
+
+Joystick Control:
+
+```python
 
 
+```
+</details>
 
-#### Build
+Drone baseplate top view: 
+<img src="https://github.com/qragsda80/Pi_In_The_Sky/blob/main/Images/PIDtesterv1.jpg" alt="PIDtesterv1" height="200" width="200">
+
+Baseplate battery holder view:
+<img src="https://github.com/qragsda80/Pi_In_The_Sky/blob/main/Images/PIDtesterv1.jpg" alt="PIDtesterv1" height="200" width="200">
+
+### 3/27-3/30
+
+#### General
+
+This week we worked on assembling the parts that had been printed over the weekend, which included the new drone baseplate, motor, holders, and rotor guards. We then constructed a base for test flight, which involved securing the drone to a piece of wood with string. This gives it more freedom and ability to utilize the PID balancing code than the previous metal mount. We then performed some test flights with this system, working on tuning the PID values. The new drone construction (with the new 3d printed parts) had plenty of lift to lift off of the ground. We also modified the wiring to the battery to have one header on the top of the board that would then have a wire going to the battery, rather than that wire being directly soldered to the board. When unplugged, this wire would cut all battery power to the drone, which allows us to easily shut down the drone if it is getting out of control without getting nicked by the propellers. This is also important for allowing us to power on the drone safely, without getting hit by the propellers when they start up.
+
+New drone on test flight base:
+<img src="https://github.com/qragsda80/Pi_In_The_Sky/blob/main/Images/PIDtesterv1.jpg" alt="PIDtesterv1" height="200" width="200">
+
+Header with shut-off wire:
+<img src="https://github.com/qragsda80/Pi_In_The_Sky/blob/main/Images/PIDtesterv1.jpg" alt="PIDtesterv1" height="200" width="200">
 
 
 
