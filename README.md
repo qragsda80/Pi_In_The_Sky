@@ -374,10 +374,10 @@ Joystick Control:
 ```
 </details>
 
-Drone baseplate top view: 
+Drone baseplate top view:   
 <img src="https://github.com/qragsda80/Pi_In_The_Sky/blob/main/Images/PIDtesterv1.jpg" alt="CAD Baseplate Top" height="200" width="200">
 
-Baseplate battery holder view:
+Baseplate battery holder view:  
 <img src="https://github.com/qragsda80/Pi_In_The_Sky/blob/main/Images/PIDtesterv1.jpg" alt="CAD Baseplate Bottom" height="200" width="200">
 
 ### 3/27-3/30
