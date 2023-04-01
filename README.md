@@ -387,14 +387,14 @@ Baseplate battery holder view:
 This week we worked on assembling the parts that had been printed over the weekend, which included the new drone baseplate, motor, holders, and rotor guards. We then constructed a base for test flight, which involved securing the drone to a piece of wood with string. This gives it more freedom and ability to utilize the PID balancing code than the previous metal mount. We then performed some test flights with this system, working on tuning the PID values. The new drone construction (with the new 3d printed parts) had plenty of lift to lift off of the ground. We also modified the wiring to the battery to have one header on the top of the board that would then have a wire going to the battery, rather than that wire being directly soldered to the board. When unplugged, this wire would cut all battery power to the drone, which allows us to easily shut down the drone if it is getting out of control without getting nicked by the propellers. This is also important for allowing us to power on the drone safely, without getting hit by the propellers when they start up.
 
 Newly Printed Propellor Guards:
-<img src="https://github.com/qragsda80/Pi_In_The_Sky/blob/9d3d78f61b3567980d3673a95d337456f4f9ab47/Images/IMG_5846.HEIC" alt="Propellor Guards" height="200" width="200">
+<img src="https://github.com/qragsda80/Pi_In_The_Sky/blob/67597bd123e1731ac3fe2faa439718a6d2b2c0c1/Images/propellorguards.png" alt="Propellor Guards" height="200" width="200">
 
 New drone on test flight base:
-<img src="https://github.com/qragsda80/Pi_In_The_Sky/blob/main/Images/PIDtesterv1.jpg" alt="Flight Base" height="200" width="200">
+<img src="https://github.com/qragsda80/Pi_In_The_Sky/blob/67597bd123e1731ac3fe2faa439718a6d2b2c0c1/Images/baseplate.png" alt="Flight Base" height="200" width="200">
 <img src="https://github.com/qragsda80/Pi_In_The_Sky/blob/20c82d6300565a25b287973261cf617b57165dd4/Images/baseplate+string.png" alt="Flight Base" height="200" width="200">
 
 Header with shut-off wire:
-<img src="https://github.com/qragsda80/Pi_In_The_Sky/blob/main/Images/PIDtesterv1.jpg" alt="Header" height="200" width="200">
+<img src="https://github.com/qragsda80/Pi_In_The_Sky/blob/67597bd123e1731ac3fe2faa439718a6d2b2c0c1/Images/header.png" alt="Header" height="200" width="200">
 
 
 
