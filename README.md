@@ -443,7 +443,7 @@ while True:
     print(f"Speedchange: {speedChange} & MotorSpeed: {pwm_motor.duty_cycle}")
     time.sleep(.5)
 ```
-</details>
+ </details>
 
 Drone baseplate top view:   
 <img src="https://github.com/qragsda80/Pi_In_The_Sky/blob/main/Images/PIDtesterv1.jpg" alt="CAD Baseplate Top" height="200" width="200">
