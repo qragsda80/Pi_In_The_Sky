@@ -365,9 +365,10 @@ These 2 weeks we worked on tuning the PID code more and designing a new drone ba
 
 <details>
 <summary>Current PID Code</summary>
-```python  
-# Code to stablize drone
 
+Code to stablize drone:
+ 
+```python  
 import time
 import math
 import board
