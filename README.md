@@ -447,10 +447,10 @@ while True:
  </details>
 
 Drone baseplate top view:   
-<img src="https://github.com/qragsda80/Pi_In_The_Sky/blob/main/Images/PIDtesterv1.jpg" alt="CAD Baseplate Top" height="200" width="200">
+<img src="https://github.com/qragsda80/Pi_In_The_Sky/blob/71614e956552dc560c7ef626926ee0472ad485c8/Images/cadTopView.PNG" alt="CAD Baseplate Top" height="200" width="200">
 
 Baseplate battery holder view:  
-<img src="https://github.com/qragsda80/Pi_In_The_Sky/blob/main/Images/PIDtesterv1.jpg" alt="CAD Baseplate Bottom" height="200" width="200">
+<img src="https://github.com/qragsda80/Pi_In_The_Sky/blob/71614e956552dc560c7ef626926ee0472ad485c8/Images/cadBottomView.PNG" alt="CAD Baseplate Bottom" height="200" width="200">
 
 ### 3/27-3/30
 
