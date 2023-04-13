@@ -20,13 +20,13 @@ pwm_motor4 = pwmio.PWMOut(board.GP28, duty_cycle=2 ** 15, frequency=50)
 
 
 
-defaultSpeed = 40000
+defaultSpeed = 65000
 pwm_motor.duty_cycle = defaultSpeed
 pwm_motor2.duty_cycle = defaultSpeed
 pwm_motor3.duty_cycle = defaultSpeed
 pwm_motor4.duty_cycle = defaultSpeed
 speedChange = 0
-Kp = 5 # proportional gain
+Kp = 5 # proportional gain 
 Ki = 0.1 # integral gain
 Kd = 5 # derivative gain
 ingerror = 0
@@ -58,7 +58,7 @@ while True:
 
 # PID controller to find speedChange   
 
-    targetPitch = -4.35
+    targetPitch = -2.35
     error = (targetPitch - currentPitch)
     ingerror = ingerror + error * elapsedTime
     dxerror = (error - lastError)/elapsedTime
@@ -72,5 +72,6 @@ while True:
     
     loopTime = time.monotonic()
     elapsedTime = startTime - loopTime
-    print(f"Speedchange: {speedChange} & MotorSpeed: {pwm_motor.duty_cycle}")
-    time.sleep(.5)
+    #print(f"Speedchange: {speedChange} & MotorSpeed: {pwm_motor.duty_cycle}")
+    print(f"currentpitch: {currentPitch} & speedchange: {speedChange}")
+    
