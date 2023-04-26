@@ -20,19 +20,18 @@ pwm_motor4 = pwmio.PWMOut(board.GP28, duty_cycle=2 ** 15, frequency=50)
 
 
 
-defaultSpeed = 65000
+defaultSpeed = 45000
 pwm_motor.duty_cycle = defaultSpeed
 pwm_motor2.duty_cycle = defaultSpeed
 pwm_motor3.duty_cycle = defaultSpeed
 pwm_motor4.duty_cycle = defaultSpeed
 speedChange = 0
-Kp = 5 # proportional gain 
-Ki = 0.1 # integral gain
-Kd = 5 # derivative gain
+Kp = 0.01 # proportional gain
+Ki = 0 # integral gain
+Kd = 0 # derivative gain
 ingerror = 0
 lastError = 0
 
-gain = 330 #how much the sensor changes (dy) with respect to dx (1 notch up) 
 
 
 #daccx = (the flat x value)
@@ -58,20 +57,45 @@ while True:
 
 # PID controller to find speedChange   
 
-    targetPitch = -2.35
+    targetPitch = 0
     error = (targetPitch - currentPitch)
-    ingerror = ingerror + error * elapsedTime
+    ingerror = ingerror + (error * elapsedTime)
     dxerror = (error - lastError)/elapsedTime
-    speedChange = Kp*error + Ki*ingerror + Kd*dxerror
+    speedChange = (Kp*error + Ki*ingerror + Kd*dxerror)*defaultSpeed
     lastError = error
-# Changes motor speeds using calculates speedChange variable
-    pwm_motor.duty_cycle = int(round(defaultSpeed + speedChange))
-    pwm_motor2.duty_cycle = int(round(defaultSpeed + speedChange))
-    pwm_motor3.duty_cycle = int(round(defaultSpeed - speedChange))
-    pwm_motor4.duty_cycle = int(round(defaultSpeed - speedChange))
+
+# checks if motor speeds are within limits
+    motor1speed = int(round(defaultSpeed + speedChange))
+    motor2speed = int(round(defaultSpeed + speedChange))
+    motor3speed = int(round(defaultSpeed - speedChange))
+    motor4speed = int(round(defaultSpeed - speedChange))
+
+    if  motor1speed < 0:
+        motor1speed = 0
+    if  motor2speed < 0:
+        motor2speed = 0
+    if  motor3speed < 0:
+        motor3speed = 0
+    if  motor4speed < 0:
+        motor4speed = 0
+    if  motor1speed > 65535:
+        motor1speed = 65535
+    if  motor2speed > 65535:
+        motor2speed = 65535
+    if  motor3speed > 65535:
+        motor3speed = 65535
+    if  motor4speed > 65535:
+        motor4speed = 65535
+    if speedChange > 20000:
+        speedChange = 20000
+
+    pwm_motor.duty_cycle = motor1speed
+    pwm_motor2.duty_cycle = motor2speed
+    pwm_motor3.duty_cycle = motor3speed
+    pwm_motor4.duty_cycle = motor4speed
     
     loopTime = time.monotonic()
     elapsedTime = startTime - loopTime
-    #print(f"Speedchange: {speedChange} & MotorSpeed: {pwm_motor.duty_cycle}")
-    print(f"currentpitch: {currentPitch} & speedchange: {speedChange}")
-    
+    print(f"Speedchange: {speedChange} & MotorSpeed: {pwm_motor.duty_cycle}")
+    print(currentPitch)
+    time.sleep(.23)
