@@ -470,4 +470,10 @@ Header with shut-off wire:
 
 
 
+### 4/10-5/1
 
+#### General
+
+These 2 weeks we worked on tuning the PID code more and designing a new drone base and other parts. We attached the drone to our metal pivot base and were using it to get different values to use in the PID. We had a few small soddering deconnection issues that required we take the drone off of the base to fix them, but they are now connected securly. For the second week we discussed and designed a new baseplate for the drone that would allow it to hold and easily swap out batteries, and securely attach the board away from any interference with the propellers. We initially had a hole in the middle of the baseplate, underneath the board, that would allow the wires to travel through and then underneath to the motor. However, we realized that this wasn’t feasible as it would interfere with a battery mount, and it would make it much more difficult to attach and detach the board to get to the wiring underneath, as the motor wires would have to all be detached and run through the hole. We decided that we’d keep the wires from interfering with the propellers by wrapping them around the arms on the way to the propeller, which was a much more effective solution. We designed a simple press-fit battery mount on the bottom of the drone, that would allow batteries to easily be swapped.
+
+dronevid.mov
