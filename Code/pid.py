@@ -1,14 +1,13 @@
-# Code to stablize drone
-
 import time
 import math
 import board
 import adafruit_mpu6050
 import busio
 import pwmio
+import simpleio
 
-sda_pin = board.GP12
-scl_pin = board.GP13
+sda_pin = board.GP10
+scl_pin = board.GP11
 i2c = busio.I2C(scl_pin, sda_pin)
 
 mpu = adafruit_mpu6050.MPU6050(i2c)
@@ -18,84 +17,94 @@ pwm_motor2 = pwmio.PWMOut(board.GP21, duty_cycle=2 ** 15, frequency=50)
 pwm_motor3 = pwmio.PWMOut(board.GP18, duty_cycle=2 ** 15, frequency=50)
 pwm_motor4 = pwmio.PWMOut(board.GP28, duty_cycle=2 ** 15, frequency=50)
 
+motor1speed = 40000
+motor2speed = 40000
+motor3speed = 40000
+motor4speed = 40000
 
+x = mpu.acceleration[0] / 9.8
+y = mpu.acceleration[1] / 9.8
+z = mpu.acceleration[2] / 9.8
 
-defaultSpeed = 45000
-pwm_motor.duty_cycle = defaultSpeed
-pwm_motor2.duty_cycle = defaultSpeed
-pwm_motor3.duty_cycle = defaultSpeed
-pwm_motor4.duty_cycle = defaultSpeed
-speedChange = 0
-Kp = 0.01 # proportional gain
-Ki = 0 # integral gain
-Kd = 0 # derivative gain
-ingerror = 0
+Ki = 0.5
+Kp = 0
+Kd = 0
+
+quadrant = 0
+target = 0
+integralPitch = 0
+integralRoll = 0
+derivativePitch = 0
+derivativeRoll = 0
 lastError = 0
 
 
-
-#daccx = (the flat x value)
-#daacy = ()
-#daacz = ()
-
-error = 0
-elapsedTime = 1
-loopTime = 0
-
 while True:
-    startTime = time.monotonic()
-
-    
-
-    # Get acceleration in g's
     x = mpu.acceleration[0] / 9.8
     y = mpu.acceleration[1] / 9.8
     z = mpu.acceleration[2] / 9.8
 
-    roll = 57.2958*math.atan2(y,z)
-    currentPitch = 57.2958*math.atan2(-x,math.sqrt(y*y+z*z))
+    roll = 180 * math.atan(y/math.sqrt(x**2 + z**2))/(math.pi)
+    pitch = 180 * math.atan(x/(math.sqrt(y**2 + z**2)))/(math.pi)
 
-# PID controller to find speedChange   
+    hyp = math.sqrt(roll**2 + pitch**2)
 
-    targetPitch = 0
-    error = (targetPitch - currentPitch)
-    ingerror = ingerror + (error * elapsedTime)
-    dxerror = (error - lastError)/elapsedTime
-    speedChange = (Kp*error + Ki*ingerror + Kd*dxerror)*defaultSpeed
-    lastError = error
+    if roll > 0 and pitch > 0:
+        quadrant = 1
+    elif roll > 0 and pitch < 0:
+        quadrant = 2
+    elif roll < 0 and pitch < 0:
+        quadrant = 3
+    elif roll < 0 and pitch > 0:
+        quadrant = 4  
 
-# checks if motor speeds are within limits
-    motor1speed = int(round(defaultSpeed + speedChange))
-    motor2speed = int(round(defaultSpeed + speedChange))
-    motor3speed = int(round(defaultSpeed - speedChange))
-    motor4speed = int(round(defaultSpeed - speedChange))
+    currentTime = time.monotonic()
+    elapsedTime = currentTime - timeCheck
 
-    if  motor1speed < 0:
-        motor1speed = 0
-    if  motor2speed < 0:
-        motor2speed = 0
-    if  motor3speed < 0:
-        motor3speed = 0
-    if  motor4speed < 0:
-        motor4speed = 0
-    if  motor1speed > 65535:
-        motor1speed = 65535
-    if  motor2speed > 65535:
-        motor2speed = 65535
-    if  motor3speed > 65535:
-        motor3speed = 65535
-    if  motor4speed > 65535:
-        motor4speed = 65535
-    if speedChange > 20000:
-        speedChange = 20000
+    error = target - hyp
+    integral = integral + elapsedTime*error
+    derivative = (error - lastError)/elapsedTime
+
+    PID = Ki*error + Kp*integral + Kd*derivative
+    pidmin = Kp*integral + Kd*derivative
+    pidmax = Ki*45 + Kp*integral + Kd*derivative
+    pidSpeed = simpleio.map_range(PID: pidmin, pidmax, 10000, 65535)
 
     pwm_motor.duty_cycle = motor1speed
     pwm_motor2.duty_cycle = motor2speed
     pwm_motor3.duty_cycle = motor3speed
     pwm_motor4.duty_cycle = motor4speed
     
-    loopTime = time.monotonic()
-    elapsedTime = startTime - loopTime
-    print(f"Speedchange: {speedChange} & MotorSpeed: {pwm_motor.duty_cycle}")
-    print(currentPitch)
-    time.sleep(.23)
+
+
+
+
+    
+
+    
+
+
+
+
+    timeCheck = currentTime
+    lastError = error
+    print(f" Roll: {roll} & Pitch: {pitch} & Hyp: {hyp}")
+    time.sleep(.5)
+    
+    
+    
+    
+    
+    
+    
+    
+    '''    
+    errorPitch = target - pitch
+    errorRoll = target - roll
+    
+    integralPitch = integralPitch + elapsedTime * errorPitch
+    integralRoll = integralRoll + elapsedTime * errorRoll
+
+    derivativePitch = (errorPitch - lastErrorPitch)/elapsedTime
+    derivativeRoll = (errorRoll - lastErrorRoll)/elapsedTime 
+    '''
