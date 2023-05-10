@@ -4,7 +4,6 @@ import board
 import adafruit_mpu6050
 import busio
 import pwmio
-import simpleio
 
 sda_pin = board.GP10
 scl_pin = board.GP11
@@ -37,6 +36,12 @@ integralRoll = 0
 derivativePitch = 0
 derivativeRoll = 0
 lastError = 0
+timeCheck = 0
+integral = 0
+
+def map_range(x, in_min, in_max, out_min, out_max):
+  return (x - in_min) * (out_max - out_min) // (in_max - in_min) + out_min
+
 
 
 while True:
@@ -45,7 +50,11 @@ while True:
     z = mpu.acceleration[2] / 9.8
 
     roll = 180 * math.atan(y/math.sqrt(x**2 + z**2))/(math.pi)
+    if roll < 1 or roll > -1 :
+        roll = 0
     pitch = 180 * math.atan(x/(math.sqrt(y**2 + z**2)))/(math.pi)
+    if pitch > -1 and pitch < 1:
+        pitch = 0
 
     hyp = math.sqrt(roll**2 + pitch**2)
 
@@ -56,7 +65,7 @@ while True:
     elif roll < 0 and pitch < 0:
         quadrant = 3
     elif roll < 0 and pitch > 0:
-        quadrant = 4  
+        quadrant = 4
 
     currentTime = time.monotonic()
     elapsedTime = currentTime - timeCheck
@@ -68,43 +77,25 @@ while True:
     PID = Ki*error + Kp*integral + Kd*derivative
     pidmin = Kp*integral + Kd*derivative
     pidmax = Ki*45 + Kp*integral + Kd*derivative
-    pidSpeed = simpleio.map_range(PID: pidmin, pidmax, 10000, 65535)
+    pidSpeed = map_range(PID, pidmin, pidmax, 10000, 65535)
 
-    pwm_motor.duty_cycle = motor1speed
-    pwm_motor2.duty_cycle = motor2speed
-    pwm_motor3.duty_cycle = motor3speed
-    pwm_motor4.duty_cycle = motor4speed
-    
-
-
-
-
-    
-
-    
-
-
+    # pwm_motor.duty_cycle = motor1speed
+    # pwm_motor2.duty_cycle = motor2speed
+    # pwm_motor3.duty_cycle = motor3speed
+    # pwm_motor4.duty_cycle = motor4speed
 
 
     timeCheck = currentTime
     lastError = error
-    print(f" Roll: {roll} & Pitch: {pitch} & Hyp: {hyp}")
+    print(f" Roll: {roll} & Pitch: {pitch} & Hyp: {hyp} & Speed: {pidSpeed}")
     time.sleep(.5)
-    
-    
-    
-    
-    
-    
-    
-    
-    '''    
+    '''
     errorPitch = target - pitch
     errorRoll = target - roll
-    
+
     integralPitch = integralPitch + elapsedTime * errorPitch
     integralRoll = integralRoll + elapsedTime * errorRoll
 
     derivativePitch = (errorPitch - lastErrorPitch)/elapsedTime
-    derivativeRoll = (errorRoll - lastErrorRoll)/elapsedTime 
+    derivativeRoll = (errorRoll - lastErrorRoll)/elapsedTime
     '''
