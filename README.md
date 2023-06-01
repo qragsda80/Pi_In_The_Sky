@@ -474,9 +474,8 @@ Header with shut-off wire:
 
 #### General
 
-
-![Hyperlink text](images/frontfacing.jpg.HEIC)
-![Hyperlink text](images/sidefacing.HEIC)
+<img src="https://github.com/qragsda80/Pi_In_The_Sky/blob/67597bd123e1731ac3fe2faa439718a6d2b2c0c1/Images/frontfacing.jpg.HEIC" alt="Front View" height="200" width="200">
+<img src="https://github.com/qragsda80/Pi_In_The_Sky/blob/67597bd123e1731ac3fe2faa439718a6d2b2c0c1/Images/sidefacing.HEIC" alt="Side View" height="200" width="200">
 
 
 
