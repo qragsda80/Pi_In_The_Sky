@@ -475,6 +475,8 @@ Header with shut-off wire:
 #### General
 
 
+![Hyperlink text](images/frontfacing.jpg.HEIC)
+![Hyperlink text](images/sidefacing.HEIC)
 
 
 
