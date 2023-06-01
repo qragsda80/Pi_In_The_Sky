@@ -492,6 +492,10 @@ https://user-images.githubusercontent.com/71349670/235937711-53f712c1-9e1a-4711-
 
 So...we ran out of time... and if our drone didn't fly, we get a C. That just wasn't going to work out. There was a chance the drone could get done, but it wasn't worth putting everyone's grades on the line for it. So we were forced to pivot. It came down from this amazing project (making a complicated drone), to rubberbanding a pico and some printed parts onto a football and throwing it, all within the last 2 wees of school. Yep... a year's worth of hard work, all to make a 2 week project invloving rubber bands. I know. Depressing. But at least we have an A next to "Engineering 4". Was it worth it though? Should we cut off our passions just for a singular letter that would barely influence our college admissions? Probably yea to be honest. But we're going to come back stronger next year. Probably not to make a drone, but do something to prove the world (and Mr.Miller) wrong. Life will go on. 
 
+### What is it?
+
+We will be attaching a Pico to a football and recording various types of data (inlcuding flight time, acceleration, spirals) while it's being thrown across a field.
+
 ### Code
 
 ### CAD
