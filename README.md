@@ -488,7 +488,7 @@ https://user-images.githubusercontent.com/71349670/235945803-2d65a5b0-d453-434b-
 
 https://user-images.githubusercontent.com/71349670/235937711-53f712c1-9e1a-4711-ab99-baf7004336ad.mov
 
-### Wiring Diagram for Drone 
+### Wiring Diagram for Drone  
 <img width="300" alt="Device on football" src="https://github.com/qragsda80/Pi_In_The_Sky/blob/main/Images/IMG_2211.jpg">
 
 ### Materials List for Drone
@@ -654,7 +654,7 @@ print(f"Average velocity: {aTotal/flightTime} m/s")
 ```
 </details>
 
-Wiring Diagram:
+Wiring Diagram:  
 <img width="300" alt="Device on football" src="https://github.com/qragsda80/Pi_In_The_Sky/blob/main/Images/IMG_2212.jpg">
 
 ### Testing/Data collection:
