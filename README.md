@@ -491,6 +491,16 @@ https://user-images.githubusercontent.com/71349670/235937711-53f712c1-9e1a-4711-
 ### Wiring Diagram for Drone 
 <img width="300" alt="Device on football" src="https://github.com/qragsda80/Pi_In_The_Sky/blob/main/Images/IMG_2211.jpg">
 
+### Materials List for Drone
+* Small screws and nuts for circuit board x4
+* Accelerometer
+* Mosfets x4
+* Drone motors x4
+* Tello battery
+* Drone rotors x4
+* Circuit board+wiring
+* 3d printed base, motor holders, and rotor guards
+
 ---
 
 ## PIVOT PROJECT
@@ -521,6 +531,16 @@ Assembled box:
 
 Wiring:  
 <img width="300" alt="Wiring" src="https://github.com/qragsda80/Pi_In_The_Sky/assets/71349609/7a9863ea-634e-4c07-a05f-f3379f5a65e1">
+
+### Materials List
+* Small screws and nuts for circuit board x8
+* Larger screws and nuts for securing cover x4
+* Accelerometer
+* Power boost
+* LIPO battery
+* Switch
+* Circuit board+wiring
+* 3d printed shell
 
 ### Code
 We combined elements of our drone accelerometer code with the onboard storing code outlined [here](https://learn.adafruit.com/circuitpython-essentials/circuitpython-storage) to create the code for this assignment. We had to add another python file, boot.py, that set the board to write only or read only each time it was booted up, based on the position of a switch. A switch or similar changing mechanism is necessary, as directly setting the value to False (making it so that the pico can write, but the computer can only read) will result in needing to wipe the board, as you cannot edit that boot.py from the computer to put it back to True, and you will be unable to change your code.py file. Another issue we encountered was that the board would wipe itself if the program was ended while it was in the midst of writing to the output.txt file, however we were able to stop this by setting a time limit on the data recording portion. The initial version of the flight data code, shown below, had much of the data analysis inside of the code itself, however this proved too complicated to incorporate into the program that saved the flight data to the board, so the analysis was done on the computer, with the raw values that had been saved.
