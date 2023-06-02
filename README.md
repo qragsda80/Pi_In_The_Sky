@@ -577,7 +577,57 @@ storage.remount("/", switch.value)
 <summary>Initial flight data code</summary>
 
 ```python
+import time
+import board
+import adafruit_mpu6050
+import busio
 
+sda_pin=board.GP10
+scl_pin=board.GP11
+i2c = busio.I2C(scl_pin, sda_pin)
+mpu = adafruit_mpu6050.MPU6050(i2c)
+
+print(mpu.acceleration)
+
+xA=mpu.acceleration[0]
+yA=mpu.acceleration[1]
+zA=mpu.acceleration[2]
+xG=mpu.gyro[0]
+yG=mpu.gyro[1]
+zG=mpu.gyro[2]
+
+maxA=xA
+mass=0.3
+aTotal=0
+spins=0
+flipped=False
+
+start=time.monotonic()
+
+while (mpu.acceleration[0]-xA)<10:# or mpu.acceleration[0]>xA:
+    xA=mpu.acceleration[0]
+    yA=mpu.acceleration[1]
+    zA=mpu.acceleration[2]
+    xG=mpu.gyro[0]
+    yG=mpu.gyro[1]
+    zG=mpu.gyro[2]
+    if zA>6 and flipped==True:
+        spins+=1
+        flipped=False
+    elif zA<-6:
+        flipped=True
+    print(mpu.acceleration)
+    print(spins)
+    #print(mpu.gyro)
+    aTotal+=xA*0.25
+    if xA<maxA:
+        maxA=xA
+    time.sleep(.25)
+flightTime=(time.monotonic()-start)
+print(f"Flight time: {flightTime} seconds")
+print(f"Rpms: {60*spins/flightTime}")
+print(f"Throw Force: {maxA*mass} newtons")
+print(f"Average velocity: {aTotal/flightTime} m/s")
 ```
 </details>
 
