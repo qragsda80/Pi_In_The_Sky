@@ -587,7 +587,7 @@ Wiring Diagram:
 ### Testing/Data collection:
 We started by testing the flight data save system first with the computer power, then unconnected to the computer and from battery power. After working out issues with these we connected it to the football and went outside and did multiple test throws. However, we discovered that a wire was coming loose in the middle of the throw from all of the forces, causing the data to be corrupted. After fixing this, we were successfully able to throw it. The data discussed below is a 30 second time period when the football was thrown 3-4 times. The ball actually spiraled quite well and was easier to throw than I anticipated, this is likely because the added materials were relatively light so they did not change the center of mass much.
 
-(Data collection video)[https://github.com/qragsda80/Pi_In_The_Sky/assets/71349609/3e8fcec7-e756-4220-966c-b7ffba0d2388]
+[Data collection video](https://github.com/qragsda80/Pi_In_The_Sky/assets/71349609/3e8fcec7-e756-4220-966c-b7ffba0d2388)
 
 Device on football:  
 
