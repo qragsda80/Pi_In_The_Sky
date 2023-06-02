@@ -587,14 +587,13 @@ Wiring Diagram:
 ### Testing/Data collection:
 We started by testing the flight data save system first with the computer power, then unconnected to the computer and from battery power. After working out issues with these we connected it to the football and went outside and did multiple test throws. However, we discovered that a wire was coming loose in the middle of the throw from all of the forces, causing the data to be corrupted. After fixing this, we were successfully able to throw it. The data discussed below is a 30 second time period when the football was thrown 3-4 times. The ball actually spiraled quite well and was easier to throw than I anticipated, this is likely because the added materials were relatively light so they did not change the center of mass much.
 
-Data collection video:
-https://github.com/qragsda80/Pi_In_The_Sky/assets/71349609/3e8fcec7-e756-4220-966c-b7ffba0d2388
+(Data collection video)[https://github.com/qragsda80/Pi_In_The_Sky/assets/71349609/3e8fcec7-e756-4220-966c-b7ffba0d2388]
 
-Device on football:
-<img src="Pictures/LeftView.png" alt="Device on football" width="300">
+Device on football:  
 
-Rubber band/string securing system:
-<img src="Pictures/LeftView.png" alt="Securing system" width="300">
+
+Rubber band/string securing system:  
+
 
 ### Analyzing Data:
 [This is the link](https://docs.google.com/spreadsheets/d/1fRaEEEXf6vAny311sa4wFPy_8Mq2DqQmLsjjiwp4du0/edit?usp=sharing) to a google sheet that shows the data and a graph of the 3 acceleration values over the 30 seconds recorded, spanning multiple throws+catches (Use the tabs on the bottom to switch). It also displays the average x, y, and z acceleration over this period, although this metric is not very useful as the period represents multiple throws and periods of standing still. The throws can be seen as when the 3 values begin to fluctuate intensely, and the calmer periods between are the periods between the throws. There is also almost always a spike in Z acceleration before a spike of X acceleration, I believe this is from the ball being thrown and moving up, as well as the centrifugal force from spinning at the beginning of the throw, and after that the ball begins to accelerate forwards as it is released, giving a spike in X. It can also be seen that the y value fluctuates the least, but does dip negative during throws from the rotational acceleration. After examining the values, it looks as if, over the multiple throws, the ball rotated approximately once every 3 values, or 0.3 seconds. This means the RPMs were approximately 200 during the throws. The max force that the thrower applied is 11 Newtons, which is obtained by finding the highest x-acceleration and multiplying it by the mass of the football and device, which is 550g.
