@@ -655,7 +655,7 @@ print(f"Average velocity: {aTotal/flightTime} m/s")
 </details>
 
 Wiring Diagram:  
-<img width="300" alt="Device on football" src="https://github.com/qragsda80/Pi_In_The_Sky/blob/main/Images/IMG_2212.jpg">
+<img width="300" alt="Football wiring diagram" src="https://github.com/qragsda80/Pi_In_The_Sky/assets/71349609/1ffa07e7-8307-400c-94a4-352a65652ce2">
 
 ### Testing/Data collection:
 We started by testing the flight data save system first with the computer power, then unconnected to the computer and from battery power. After working out issues with these we connected it to the football and went outside and did multiple test throws. However, we discovered that a wire was coming loose in the middle of the throw from all of the forces, causing the data to be corrupted. After fixing this, we were successfully able to throw it. The data discussed below is a 30 second time period when the football was thrown 3-4 times. The ball actually spiraled quite well and was easier to throw than I anticipated, this is likely because the added materials were relatively light so they did not change the center of mass much.
