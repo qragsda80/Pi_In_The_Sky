@@ -499,23 +499,25 @@ So...we ran out of time... and if our drone didn't fly, we get a C. That just wa
 We will be attaching a Pico to a football and recording various types of data (inlcuding flight time, acceleration, spirals) while it's being thrown across a field.
 
 ### Physical Design/CAD: 
-[CAD Link](https://cvilleschools.onshape.com/documents/7fe5056036ad555da9fd4e10/w/32038d86358396a3f7364476/e/71f938a89479a5087d14a6cc?renderMode=0&uiState=6479580649b2e71b9d3f832e)
-The physical design was relatively simple, with just a simple circuit board housing the accelerometer, pico, and power boost, and a protective shell that would attach these to the football and protect them from damage. We created extra indents for nuts (used to attach circuit board) to screw in underneath the bottom of the case in order to allow the bottom to sit flush with the football, without nuts in between them. We also made a hole in the case for the switch that switches the code from read to write mode, as this needs to be accessed often. The case was designed in two parts, pictured below, with the base attaching to the circuit board and the football, and a removable cover that protects the hardware but is also easily taken off to access the board. We originally designed this cover to be held on with nuts and screws, however we figured out that rubber bands were easier to use to secure it to the base as it held it tightly but also allowed the cover to be lifted up slightly to plug in a wire that would start the flight recording. We printed both of these parts out of TPU, which held up very well and did a great job of protecting the board through a few dropped passess. This was likely because it was rubbery and could flex, rather than traditional ABS which is brittle and would likely have cracked.
+[CAD Link](https://cvilleschools.onshape.com/documents/7fe5056036ad555da9fd4e10/w/32038d86358396a3f7364476/e/71f938a89479a5087d14a6cc?renderMode=0&uiState=6479580649b2e71b9d3f832e)  
+The physical design was relatively simple, with just a simple circuit board housing the accelerometer, pico, and power boost, and a protective shell that would attach these to the football and protect them from damage. We created extra indents for nuts (used to attach circuit board) to screw in underneath the bottom of the case in order to allow the bottom to sit flush with the football, without nuts in between them. We also made a hole in the case for the switch that switches the code from read to write mode, as this needs to be accessed often. The case was designed in two parts, pictured below, with the base attaching to the circuit board and the football, and a removable cover that protects the hardware but is also easily taken off to access the board. We originally designed this cover to be held on with nuts and screws, however we figured out that rubber bands were easier to use to secure it to the base as it held it tightly but also allowed the cover to be lifted up slightly to plug in a wire that would start the flight recording. We printed both of these parts out of TPU, which held up very well and did a great job of protecting the board through a few dropped passess. This was likely because it was rubbery and could flex, rather than traditional ABS which is brittle and would likely have cracked. The device was held onto the football with two rubber bands, one on each end, that had a spring holding them together on the other side to ensure they couldn't roll off the sides.
 
-CAD Base top view:
-<img src="Pictures/LeftView.png" alt="CAD Base top view" width="300">
+CAD Base top view:  
+<img width="300" alt="CAD Base top view" src="https://github.com/qragsda80/Pi_In_The_Sky/assets/71349609/814cd470-7065-488a-a475-af41d2072ae4">
 
-CAD Base bottom view:
-<img src="Pictures/LeftView.png" alt="Base bottom view" width="300">
 
-CAD Cover view:
-<img src="Pictures/LeftView.png" alt="Cover view" width="300">
+CAD Base bottom view:  
+<img width="300" alt="CAD Base bottom view" src="https://github.com/qragsda80/Pi_In_The_Sky/assets/71349609/82a0a9c9-dace-4ff2-a67e-9b6b923b3ac4">
 
-Assembled box:
-<img src="Pictures/LeftView.png" alt="Base top view" width="300">
 
-Wiring:
-<img src="Pictures/LeftView.png" alt="Base bottom view" width="300">
+CAD Cover view:  
+<img width="300" alt="CAD Cover view" src="https://github.com/qragsda80/Pi_In_The_Sky/assets/71349609/070fb8a9-418b-487d-9580-eae90d7b7b9c">
+
+Assembled box:  
+
+
+Wiring:  
+
 
 ### Code
 We combined elements of our drone accelerometer code with the onboard storing code outlined [here](https://learn.adafruit.com/circuitpython-essentials/circuitpython-storage) to create the code for this assignment. We had to add another python file, boot.py, that set the board to write only or read only each time it was booted up, based on the position of a switch. A switch or similar changing mechanism is necessary, as directly setting the value to False (making it so that the pico can write, but the computer can only read) will result in needing to wipe the board, as you cannot edit that boot.py from the computer to put it back to True, and you will be unable to change your code.py file. Another issue we encountered was that the board would wipe itself if the program was ended while it was in the midst of writing to the output.txt file, however we were able to stop this by setting a time limit on the data recording portion. The initial version of the flight data code, shown below, had much of the data analysis inside of the code itself, however this proved too complicated to incorporate into the program that saved the flight data to the board, so the analysis was done on the computer, with the raw values that had been saved.
@@ -579,10 +581,14 @@ storage.remount("/", switch.value)
 ```
 </details>
 
+Wiring Diagram:
+<img src="Pictures/LeftView.png" alt="Base bottom view" width="300">
+
 ### Testing/Data collection:
 We started by testing the flight data save system first with the computer power, then unconnected to the computer and from battery power. After working out issues with these we connected it to the football and went outside and did multiple test throws. However, we discovered that a wire was coming loose in the middle of the throw from all of the forces, causing the data to be corrupted. After fixing this, we were successfully able to throw it. The data discussed below is a 30 second time period when the football was thrown 3-4 times. The ball actually spiraled quite well and was easier to throw than I anticipated, this is likely because the added materials were relatively light so they did not change the center of mass much.
 
 Data collection video:
+https://github.com/qragsda80/Pi_In_The_Sky/assets/71349609/3e8fcec7-e756-4220-966c-b7ffba0d2388
 
 Device on football:
 <img src="Pictures/LeftView.png" alt="Device on football" width="300">
