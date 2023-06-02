@@ -1,5 +1,7 @@
 # Pi_In_The_Sky
 
+[Jump to pivot football project](#PIVOT-PROJECT)
+
 ## The Project
 
 Times are changing. Engineers such as Quinn & Shrey are super chill, but need to stay current in order to keep being chill. Drones are the next big thing in engineering, and building one successfully: that's super chill. As engineer's in the modern times, our job is to help the world, and be chill while doing it, because we want to set a good example for others who think Engineering is for not-chill people.
@@ -496,9 +498,102 @@ So...we ran out of time... and if our drone didn't fly, we get a C. That just wa
 
 We will be attaching a Pico to a football and recording various types of data (inlcuding flight time, acceleration, spirals) while it's being thrown across a field.
 
+### Physical Design/CAD: 
+[CAD Link](https://cvilleschools.onshape.com/documents/7fe5056036ad555da9fd4e10/w/32038d86358396a3f7364476/e/71f938a89479a5087d14a6cc?renderMode=0&uiState=6479580649b2e71b9d3f832e)
+The physical design was relatively simple, with just a simple circuit board housing the accelerometer, pico, and power boost, and a protective shell that would attach these to the football and protect them from damage. We created extra indents for nuts (used to attach circuit board) to screw in underneath the bottom of the case in order to allow the bottom to sit flush with the football, without nuts in between them. We also made a hole in the case for the switch that switches the code from read to write mode, as this needs to be accessed often. The case was designed in two parts, pictured below, with the base attaching to the circuit board and the football, and a removable cover that protects the hardware but is also easily taken off to access the board. We originally designed this cover to be held on with nuts and screws, however we figured out that rubber bands were easier to use to secure it to the base as it held it tightly but also allowed the cover to be lifted up slightly to plug in a wire that would start the flight recording. We printed both of these parts out of TPU, which held up very well and did a great job of protecting the board through a few dropped passess. This was likely because it was rubbery and could flex, rather than traditional ABS which is brittle and would likely have cracked.
+
+CAD Base top view:
+<img src="Pictures/LeftView.png" alt="CAD Base top view" width="300">
+
+CAD Base bottom view:
+<img src="Pictures/LeftView.png" alt="Base bottom view" width="300">
+
+CAD Cover view:
+<img src="Pictures/LeftView.png" alt="Cover view" width="300">
+
+Assembled box:
+<img src="Pictures/LeftView.png" alt="Base top view" width="300">
+
+Wiring:
+<img src="Pictures/LeftView.png" alt="Base bottom view" width="300">
+
 ### Code
+We combined elements of our drone accelerometer code with the onboard storing code outlined [here](https://learn.adafruit.com/circuitpython-essentials/circuitpython-storage) to create the code for this assignment. We had to add another python file, boot.py, that set the board to write only or read only each time it was booted up, based on the position of a switch. A switch or similar changing mechanism is necessary, as directly setting the value to False (making it so that the pico can write, but the computer can only read) will result in needing to wipe the board, as you cannot edit that boot.py from the computer to put it back to True, and you will be unable to change your code.py file. Another issue we encountered was that the board would wipe itself if the program was ended while it was in the midst of writing to the output.txt file, however we were able to stop this by setting a time limit on the data recording portion. The initial version of the flight data code, shown below, had much of the data analysis inside of the code itself, however this proved too complicated to incorporate into the program that saved the flight data to the board, so the analysis was done on the computer, with the raw values that had been saved.
+<details>
+<summary>code.py</summary>
 
-### CAD
+```python
+import time
+import board
+import digitalio
+import microcontroller
+import adafruit_mpu6050
+import busio
 
-### Final Product in Action
+led = digitalio.DigitalInOut(board.LED)
+led.direction = digitalio.Direction.OUTPUT
+sda_pin=board.GP10
+scl_pin=board.GP11
+i2c = busio.I2C(scl_pin, sda_pin)
+mpu = adafruit_mpu6050.MPU6050(i2c)     #Sets up LED and acceleromter
 
+try:        #Attempts to run code to store flight data on pico
+    with open("/lib/output.txt", "a") as fp:    #Writes to a text file called output.txt
+        for x in range(1,300):  #Loops 300 times, with each loop sleeping for 0.1 seconds, resulting in 30 seconds of data
+                                #Data is recorded each 0.1 seconds, making 300 different x, y, and z acceleration values
+            time.sleep(.1)  
+            fp.write(f"{mpu.acceleration}")#Writes the current x, y, and z acceleration values to the document, followed by a linebreak
+            fp.write("\n")
+            fp.flush()
+except OSError as e:    #If initial attempt to write is unsuccessful, likely because the pico is set to read mode rather than write mode, the board LED will blink
+    delay = 0.5
+    if e.args[0] == 28:
+        delay = 0.25
+    while True:
+        led.value = not led.value
+        time.sleep(delay)
+```
+</details>
+<details>
+<summary>boot.py</summary>
+
+```python
+import board
+import storage
+import digitalio
+
+switch = digitalio.DigitalInOut(board.GP5)
+switch.direction = digitalio.Direction.INPUT
+switch.pull = digitalio.Pull.UP     #Sets up switch
+
+storage.remount("/", switch.value)
+#If switch is flipped so the wire is connected, the pico can now write and store output, and the computer cannot
+#If switch is in other orientation computer can edit+save files on the board, and the pico cannot record flight data on itself
+```
+</details>
+<details>
+<summary>Initial flight data code</summary>
+
+```python
+
+```
+</details>
+
+### Testing/Data collection:
+We started by testing the flight data save system first with the computer power, then unconnected to the computer and from battery power. After working out issues with these we connected it to the football and went outside and did multiple test throws. However, we discovered that a wire was coming loose in the middle of the throw from all of the forces, causing the data to be corrupted. After fixing this, we were successfully able to throw it. The data discussed below is a 30 second time period when the football was thrown 3-4 times. The ball actually spiraled quite well and was easier to throw than I anticipated, this is likely because the added materials were relatively light so they did not change the center of mass much.
+
+Data collection video:
+
+Device on football:
+<img src="Pictures/LeftView.png" alt="Device on football" width="300">
+
+Rubber band/string securing system:
+<img src="Pictures/LeftView.png" alt="Securing system" width="300">
+
+### Analyzing Data:
+[This is the link](https://docs.google.com/spreadsheets/d/1fRaEEEXf6vAny311sa4wFPy_8Mq2DqQmLsjjiwp4du0/edit?usp=sharing) to a google sheet that shows the data and a graph of the 3 acceleration values over the 30 seconds recorded, spanning multiple throws+catches (Use the tabs on the bottom to switch). It also displays the average x, y, and z acceleration over this period, although this metric is not very useful as the period represents multiple throws and periods of standing still. The throws can be seen as when the 3 values begin to fluctuate intensely, and the calmer periods between are the periods between the throws. There is also almost always a spike in Z acceleration before a spike of X acceleration, I believe this is from the ball being thrown and moving up, as well as the centrifugal force from spinning at the beginning of the throw, and after that the ball begins to accelerate forwards as it is released, giving a spike in X. It can also be seen that the y value fluctuates the least, but does dip negative during throws from the rotational acceleration. After examining the values, it looks as if, over the multiple throws, the ball rotated approximately once every 3 values, or 0.3 seconds. This means the RPMs were approximately 200 during the throws. The max force that the thrower applied is 11 Newtons, which is obtained by finding the highest x-acceleration and multiplying it by the mass of the football and device, which is 550g.
+
+### Reflection:
+Overall, this assignment was relatively quick and easy, however we did learn a lot about saving the values to our board. It was useful to be able to explore other area of this project, such as the data collection and analysis, as before we had just been working on the pid for weeks. 
+
+[Back to Top](#Pi_In_The_Sky)
