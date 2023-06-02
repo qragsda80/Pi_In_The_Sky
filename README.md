@@ -514,10 +514,10 @@ CAD Cover view:
 <img width="300" alt="CAD Cover view" src="https://github.com/qragsda80/Pi_In_The_Sky/assets/71349609/070fb8a9-418b-487d-9580-eae90d7b7b9c">
 
 Assembled box:  
-
+<img width="300" alt="Assembled box" src="https://github.com/qragsda80/Pi_In_The_Sky/assets/71349609/2c43439b-9b4b-495c-8768-08f2bd421d42">
 
 Wiring:  
-
+<img width="300" alt="Wiring" src="https://github.com/qragsda80/Pi_In_The_Sky/assets/71349609/7a9863ea-634e-4c07-a05f-f3379f5a65e1">
 
 ### Code
 We combined elements of our drone accelerometer code with the onboard storing code outlined [here](https://learn.adafruit.com/circuitpython-essentials/circuitpython-storage) to create the code for this assignment. We had to add another python file, boot.py, that set the board to write only or read only each time it was booted up, based on the position of a switch. A switch or similar changing mechanism is necessary, as directly setting the value to False (making it so that the pico can write, but the computer can only read) will result in needing to wipe the board, as you cannot edit that boot.py from the computer to put it back to True, and you will be unable to change your code.py file. Another issue we encountered was that the board would wipe itself if the program was ended while it was in the midst of writing to the output.txt file, however we were able to stop this by setting a time limit on the data recording portion. The initial version of the flight data code, shown below, had much of the data analysis inside of the code itself, however this proved too complicated to incorporate into the program that saved the flight data to the board, so the analysis was done on the computer, with the raw values that had been saved.
@@ -590,10 +590,10 @@ We started by testing the flight data save system first with the computer power,
 [Data collection video](https://github.com/qragsda80/Pi_In_The_Sky/assets/71349609/6a94cb79-00bd-4416-a80f-be6535283618)
 
 Device on football:  
-
+<img width="300" alt="Device on football" src="https://github.com/qragsda80/Pi_In_The_Sky/assets/71349609/7353edb0-440d-401e-afd1-54200ef2fe24">
 
 Rubber band/string securing system:  
-
+<img width="300" alt="Securing system" src="https://github.com/qragsda80/Pi_In_The_Sky/assets/71349609/85042e8a-9d5c-4154-b09c-dd33b0b3e91f">
 
 ### Analyzing Data:
 [This is the link](https://docs.google.com/spreadsheets/d/1fRaEEEXf6vAny311sa4wFPy_8Mq2DqQmLsjjiwp4du0/edit?usp=sharing) to a google sheet that shows the data and a graph of the 3 acceleration values over the 30 seconds recorded, spanning multiple throws+catches (Use the tabs on the bottom to switch). It also displays the average x, y, and z acceleration over this period, although this metric is not very useful as the period represents multiple throws and periods of standing still. The throws can be seen as when the 3 values begin to fluctuate intensely, and the calmer periods between are the periods between the throws. There is also almost always a spike in Z acceleration before a spike of X acceleration, I believe this is from the ball being thrown and moving up, as well as the centrifugal force from spinning at the beginning of the throw, and after that the ball begins to accelerate forwards as it is released, giving a spike in X. It can also be seen that the y value fluctuates the least, but does dip negative during throws from the rotational acceleration. After examining the values, it looks as if, over the multiple throws, the ball rotated approximately once every 5 values, or 0.5 seconds. This means the RPMs were approximately 120 during the throws. The max force that the thrower applied is 11 Newtons, which is obtained by finding the highest x-acceleration and multiplying it by the mass of the football and device, which is 550g.
