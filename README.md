@@ -476,8 +476,8 @@ Header with shut-off wire:
 
 #### General
 
-<img src="https://github.com/qragsda80/Pi_In_The_Sky/blob/67597bd123e1731ac3fe2faa439718a6d2b2c0c1/Images/frontfacing.jpg" alt="Front View" height="200" width="200">
-<img src="https://github.com/qragsda80/Pi_In_The_Sky/blob/67597bd123e1731ac3fe2faa439718a6d2b2c0c1/Images/sidefacing.jpg" alt="Side View" height="200" width="200">
+<img width="300" alt="Front view" src="https://github.com/qragsda80/Pi_In_The_Sky/blob/main/Images/frontfacing.jpg">
+<img width="300" alt="Side View" src="https://github.com/qragsda80/Pi_In_The_Sky/blob/main/Images/sidefacing.jpg">
 
 
 
