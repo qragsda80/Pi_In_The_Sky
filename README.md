@@ -492,7 +492,7 @@ https://user-images.githubusercontent.com/71349670/235937711-53f712c1-9e1a-4711-
 <img width="300" alt="Device on football" src="https://github.com/qragsda80/Pi_In_The_Sky/blob/main/Images/IMG_2211.jpg">
 
 ### Materials List for Drone
-* Small screws and nuts for circuit board x4
+* #1/72 x 3/8" screws and #1/72 nuts for circuit board x4
 * Accelerometer
 * Mosfets x4
 * Drone motors x4
@@ -533,8 +533,8 @@ Wiring:
 <img width="300" alt="Wiring" src="https://github.com/qragsda80/Pi_In_The_Sky/assets/71349609/7a9863ea-634e-4c07-a05f-f3379f5a65e1">
 
 ### Materials List
-* Small screws and nuts for circuit board x8
-* Larger screws and nuts for securing cover x4
+* #1/72 x 3/8" screws and #1/72 nuts for circuit board x8
+* #4/40 x 1" screws and #4/40 nuts for securing cover x4
 * Accelerometer
 * Power boost
 * LIPO battery
